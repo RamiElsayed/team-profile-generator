@@ -1,0 +1,23 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "generating a dynamic html team profile",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^6.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamiElsayed/team-profile-generator.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/RamiElsayed/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/RamiElsayed/team-profile-generator#readme"
+}
