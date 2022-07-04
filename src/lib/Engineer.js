@@ -1,4 +1,4 @@
-const Employee = require("./employee");
+const Employee = require("./Employee");
 const { emptyValidationMessage } = require('../src/validation');
 
 class Engineer extends Employee {

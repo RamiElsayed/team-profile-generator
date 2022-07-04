@@ -1,28 +1,18 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-const emailValidation = (answer) => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(answer)) {
-    return "You have to provide a valid email address!";
-  }
-  return true;
-};
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
-const roles = [
-  {
-    name: "Engineer",
-  },
-  {
-    name: "Intern",
-  },
-];
+const teamStaff = [];
 
-const teamQuestions = [
+
+const managerQuestions = [
   {
     type: "input",
     name: "Manager's Name",
-    message: "Please provide a team manager's name",
+    message: "Please provide a manager manager's name",
     validate: nameInput => {
       if (nameInput) {
           return true;
@@ -58,11 +48,6 @@ const teamQuestions = [
     },
   },
   {
-    type: "confirm",
-    name: "add role",
-    message: "do you want to add a new employee",
-  },
-  {
     type: "input",
     name: "officeNumber",
     message: "Please enter the manager's office number",
@@ -74,21 +59,21 @@ const teamQuestions = [
           return true;
       }
   }
-  },
-  {
-    type: "list",
-    name: "Roles",
-    message: "Please select the role you want to add to the team",
-    choices: roles,
-  },
+  }
 ];
 
-const promptTeamQuestions = () => {
-  return inquirer.prompt(teamQuestions);
+const promptmanagerQuestions = () => {
+  return inquirer.prompt(managerQuestions).then(managerInput => {
+    const  { name, id, email, officeNumber } = managerInput; 
+    const manager = new Manager (name, id, email, officeNumber);
+
+    teamStaff.push(manager); 
+    console.log(manager); 
+})
 };
 
 const init = async () => {
-  const data = await promptTeamQuestions();
+  const data = await promptmanagerQuestions();
 };
 
 // Function call to initialize app
