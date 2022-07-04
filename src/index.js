@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+const renderHTMLPage = require('./renderTeamHTMLPage')
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -176,9 +177,23 @@ const promptEmployeeQuestions = () => {
         }
   })
 };
+
+const writeFile = data => {
+  fs.writeFile('../dist/index.html', data, err => {
+    if (err) {
+      console.log(err);
+      return;
+    } else {
+      console.log("Team profile has been successfly generated in the index.html file please check it")
+    }
+  });
+};
 const init = async() => {
    await promptManagerQuestions();
    await promptEmployeeQuestions();
+   renderHTMLPage(teamStaff);
+   writeFile(HTMLPage);
+   
 };
 
 // Function call to initialize app
