@@ -1,5 +1,5 @@
 # team-profile-generator
-![Github license](http://img.shields.io/badge/license-MIT-blue.svg)
+![Github license](https://img.shields.io/badge/MIT-License-blue)
 
 ## Description
 
