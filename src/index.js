@@ -192,7 +192,7 @@ const init = async() => {
    await promptManagerQuestions();
    await promptEmployeeQuestions();
    renderHTMLPage(teamStaff);
-   writeFile(HTMLPage);
+   writeFile(renderHTMLPage);
    
 };
 
