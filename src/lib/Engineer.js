@@ -1,5 +1,5 @@
 const Employee = require("./Employee");
-const { emptyValidationMessage } = require('../src/validation');
+const { emptyValidationMessage } = require('../validation');
 
 class Engineer extends Employee {
     constructor(name, id, email, github) {
