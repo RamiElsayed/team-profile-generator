@@ -4,7 +4,7 @@
   "description": "generating a dynamic html team profile",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node index.js",
     "test": "jest"
   },
   "author": "",

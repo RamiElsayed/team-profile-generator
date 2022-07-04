@@ -1,10 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-const renderHTMLPage = require('./renderTeamHTMLPage')
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+const renderHTMLPage = require('./src/renderTeamHTMLPage')
+const Manager = require("./src/lib/Manager");
+const Engineer = require("./src/lib/Engineer");
+const Intern = require("./src/lib/Intern");
 
 const teamStaff = [];
 
@@ -179,7 +179,7 @@ const promptEmployeeQuestions = () => {
 };
 
 const writeFile = data => {
-  fs.writeFile('../dist/index.html', data, err => {
+  fs.writeFile('./dist/index.html', data, err => {
     if (err) {
       console.log(err);
       return;
@@ -191,8 +191,8 @@ const writeFile = data => {
 const init = async() => {
    await promptManagerQuestions();
    await promptEmployeeQuestions();
-   renderHTMLPage(teamStaff);
-   writeFile(renderHTMLPage);
+   const HTMLPage = renderHTMLPage(teamStaff);
+   writeFile(HTMLPage);
    
 };
 

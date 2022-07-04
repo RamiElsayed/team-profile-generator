@@ -52,7 +52,7 @@ const renderIntern = function (intern) {
     `
 };
 
-renderHTML = (data) => {
+const renderHTML = (data) => {
 
     // array for cards 
     teamMembersArray = []; 
