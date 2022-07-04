@@ -1,4 +1,22 @@
-const generateEngineer = function (engineer) {
+const renderManager = function (manager) {
+    return `
+    <div class="col-4 mt-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h3>${manager.name}</h3>
+                <h4>Manager</h4><i class="material-icons">content_paste</i>
+            </div>
+            <div class="card-body">
+                <p class="id">ID: ${manager.id}</p>
+                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                <p class="office">Office Number: ${manager.officeNumber}</p>
+            </div>
+        </div>
+    </div>
+    `;
+};
+
+const renderEngineer = function (engineer) {
     return `
     <div class="col-4 mt-4">
         <div class="card h-100">
@@ -14,8 +32,9 @@ const generateEngineer = function (engineer) {
         </div>
     </div>
     `
-}
-const generateIntern = function (intern) {
+};
+
+const renderIntern = function (intern) {
     return `
     <div class="col-4 mt-4">
         <div class="card h-100">
@@ -32,10 +51,11 @@ const generateIntern = function (intern) {
 </div>
     `
 };
-generateHTML = (data) => {
+
+renderHTML = (data) => {
 
     // array for cards 
-    pageArray = []; 
+    teamMembersArray = []; 
 
     for (let i = 0; i < data.length; i++) {
         const employee = data[i];
@@ -44,37 +64,37 @@ generateHTML = (data) => {
 
         // call manager function
         if (role === 'Manager') {
-            const managerCard = generateManager(employee);
+            const managerCard = renderManager(employee);
 
-            pageArray.push(managerCard);
+            teamMembersArray.push(managerCard);
         }
 
         // call engineer function
         if (role === 'Engineer') {
-            const engineerCard = generateEngineer(employee);
+            const engineerCard = renderEngineer(employee);
 
-            pageArray.push(engineerCard);
+            teamMembersArray.push(engineerCard);
         }
 
         // call intern function 
         if (role === 'Intern') {
-            const internCard = generateIntern(employee);
+            const internCard = renderIntern(employee);
 
-            pageArray.push(internCard);
+            teamMembersArray.push(internCard);
         }
         
     }
 
     // joining strings 
-    const employeeCards = pageArray.join('')
+    const employeeCards = teamMembersArray.join('')
 
-    // return to generated page
-    const generateTeam = generateTeamPage(employeeCards); 
-    return generateTeam;
+    // return to rendered page
+    const renderTeam = renderTeamPage(employeeCards); 
+    return renderTeam;
 
 }
 
-const generateTeamPage = function (employeeCards) {   
+const renderTeamPage = function (employeeCards) {   
     return`
     <!DOCTYPE html>
     <html lang="en">
@@ -111,21 +131,4 @@ const generateTeamPage = function (employeeCards) {
   `;
   }
 
-const generateManager = function (manager) {
-    return `
-    <div class="col-4 mt-4">
-        <div class="card h-100">
-            <div class="card-header">
-                <h3>${manager.name}</h3>
-                <h4>Manager</h4><i class="material-icons">content_paste</i>
-            </div>
-            <div class="card-body">
-                <p class="id">ID: ${manager.id}</p>
-                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                <p class="office">Office Number: ${manager.officeNumber}</p>
-            </div>
-        </div>
-    </div>
-    `;
-}
-module.exports = generateHTML; 
+module.exports = renderHTML; 
