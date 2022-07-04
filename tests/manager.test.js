@@ -1,5 +1,5 @@
 const {describe, expect, test} = require('@jest/globals');
-const Manager = require('../lib/manager');
+const Manager = require('../src/lib/manager');
 const { emptyValidationMessage } = require('../src/validation');
 
 

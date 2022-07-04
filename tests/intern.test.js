@@ -1,5 +1,5 @@
 const {describe, expect, test} = require('@jest/globals');
-const Intern = require('../lib/intern');
+const Intern = require('../src/lib/Intern');
 const { emptyValidationMessage } = require('../src/validation');
 
 describe('Intern', () => {
