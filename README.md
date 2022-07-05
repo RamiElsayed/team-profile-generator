@@ -3,7 +3,12 @@
 
 ## Description
 
-This application was created to generate a team profile based on user input using the Inquirer module from Node.js and displaying the information on a newly created html page with a style sheet. This project demonstrates use of OOP and TDD using Jest.
+- This application was created to generate a team profile based on user input using the Inquirer module from Node.js and displaying the information on a newly created html page with a style sheet. 
+- This project demonstrates use of OOP and TDD using Jest. 
+- In the project I covered as many testing cases as possible, also built html in chunks for future maintainance.
+- This project also built using JQuery, bootstrap and google fonts to build HTML page.
+- Files organised in a good structured way for easy access.
+
 
 ## Table of Contents
 
@@ -16,11 +21,13 @@ This application was created to generate a team profile based on user input usin
 
 ## Installation
 
-The user should clone the repository from GitHub and download Node. This application also requires a file system and inquirer module. If testing is required, this application uses Jest.
+The user should clone the repository from GitHub and download Node. This application also requires a file system and inquirer module. If testing is required, you will need jest to run tests.
 
 ## Usage
 
 Use inquirer from your command line to answer questions about your project.<br>
+[demonstation-video](https://drive.google.com/file/d/1rNCWjh1PhN2mR4nkPqHRRSzs1xg8TvNT/view)
+![project-screenshot](./images/team-profile-generator.jpg)
 
 ## License 
 
