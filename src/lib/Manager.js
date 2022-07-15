@@ -4,6 +4,7 @@ const { emptyValidationMessage } = require('../validation');
 class Manager extends Employee {
     constructor(name, id, email, officeNumber) {
         super(name, id, email);
+        if (!officeNumber.replace(' ', '')) throw Error(emptyValidationMessage('OfficeNumber'));
         this.officeNumber = officeNumber;
     }
 
